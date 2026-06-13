@@ -210,7 +210,7 @@ export default function Hero() {
               {/* Profile Illustration */}
               <div className="w-full h-full rounded-xl overflow-hidden relative group bg-gradient-to-b from-[#F5F3FF] to-white flex items-center justify-center">
                 <img
-                  src="https://raw.githubusercontent.com/Ayeshadeveloper14/RUBAB-PORTFOLIO/main/src/assets/images/rubab-pic.png"
+                  src="https://ayeshadeveloper14.github.io/rubab-pic/rubab%20pic.png"
                   alt="Rubab - Professional Digital Marketing Specialist"
                   className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                   referrerPolicy="no-referrer"
