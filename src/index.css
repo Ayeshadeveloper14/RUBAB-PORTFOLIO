@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800;900&family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-serif: "Playfair Display", serif;
+  
+  --font-poppins: "Poppins", sans-serif;
+  --font-sora: "Sora", sans-serif;
+
+  --color-luxury-bg: #FFFFFF;
+  --color-primary-brand: #7C3AED;
+  --color-secondary-brand: #EFF6FF;
+  --color-accent-brand: #EC4899;
+}
+
+/* Base custom interactive scroll style */
+html {
+  scroll-behavior: smooth;
+  background-color: #FFFFFF;
+  color: #1E293B;
+}
+
+/* Floating animation for glowing blurred blobs */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.15);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+@keyframes float-medium {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(-40px, 40px) scale(1.1);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 25s infinite alternate ease-in-out;
+}
+
+.animate-float-medium {
+  animation: float-medium 18s infinite alternate ease-in-out;
+}
+
+/* Custom fade-in and slide-up micro keyframes for transitions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-spin-slow {
+  animation: spin 20s linear infinite;
+}
+
+/* Floating animation for hero image */
+@keyframes bobbing {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+.animate-bobbing {
+  animation: bobbing 6s ease-in-out infinite;
+}
+
+/* Floating animation for glowing background blobs */
+@keyframes float-blob {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.7;
+  }
+  33% {
+    transform: translate(30px, -40px) scale(1.15);
+    opacity: 0.95;
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+    opacity: 0.8;
+  }
+}
+.animate-float-blob {
+  animation: float-blob 20s infinite alternate ease-in-out;
+}
+
+/* Glassmorphism shine sweep effect */
+.premium-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.premium-shine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.premium-shine:hover::before {
+  left: 150%;
+}
+
+/* 3D lifting effect on cards with extra smooth easing */
+.premium-lift {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.premium-lift:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 40px -15px rgba(124, 58, 237, 0.12), 0 0 25px -5px rgba(236, 72, 153, 0.05);
+}
+
+/* Rotating light effects for buttons */
+@keyframes button-glow {
+  0%, 100% {
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3), 0 0 10px rgba(236, 72, 153, 0.1);
+  }
+  50% {
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.5), 0 0 20px rgba(236, 72, 153, 0.3);
+  }
+}
+.animate-button-glow:hover {
+  animation: button-glow 3s infinite ease-in-out;
+}
+
+/* Soft particle floating layout */
+@keyframes particle-up {
+  0% {
+    transform: translateY(100vh) translateX(0) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-10vh) translateX(20px) scale(1.2);
+    opacity: 0;
+  }
+}
+.floating-particle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, rgba(236, 72, 153, 0) 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Scrollbar layout custom style */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F5F3FF;
+}
+::-webkit-scrollbar-thumb {
+  background: #DDD6FE;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C084FC;
+}
